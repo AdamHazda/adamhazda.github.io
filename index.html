@@ -324,7 +324,7 @@
         </div>
     </header>
 
-    <!-- Watchfaces Section (Zvýrazněná sekce ciferníků) -->
+    <!-- Watchfaces Section -->
     <section class="py-5 section-watchfaces fade-in-section">
         <div class="container py-3">
             <div class="text-center mb-5">
@@ -518,7 +518,7 @@
         </div>
     </section>
 
-    <!-- Games Section (Zvýrazněná sekce her) -->
+    <!-- Games Section -->
     <section class="py-5 section-games fade-in-section">
         <div class="container py-3">
             <div class="text-center mb-5">
@@ -606,7 +606,7 @@
         </div>
     </section>
 
-    <!-- Information / Footer Section s obrázkem přes celou kartu soukromí -->
+    <!-- Information / Footer Section -->
     <section class="py-5 bg-light fade-in-section">
         <div class="container py-3">
             <div class="row g-4 text-small align-items-stretch">
@@ -627,7 +627,6 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <!-- Karta s obrázkem přes celé pozadí a jemnějším přechodem -->
                     <div class="card-custom p-4 p-md-5 privacy-card-bg">
                         <div class="privacy-card-content">
                             <h5 class="text-white fw-bold h6 mb-3">
@@ -649,13 +648,12 @@
         </div>
     </section>
 
-    <!-- Footer s počítadlem návštěv přes GitHub / Visitor Badge -->
+    <!-- Footer s aktualizovanou cestou pro GitHub repozitář -->
     <footer class="py-4 bg-white border-top text-center text-muted small">
         <div class="container">
             <div class="mb-2">
-                <!-- Počítadlo návštěv (vložte svůj GitHub uživatelský účet/repozitář místo 'username/repo') -->
-                <a href="https://github.com/adamhazda" target="_blank">
-                    <img src="https://api.visitorbadge.io/api/combined?path=adamhazda.github.io&label=Page%20Views&color=2563eb" alt="Visitor Count">
+                <a href="https://github.com/AdamHazda/hazda.github.io" target="_blank">
+                    <img src="https://api.visitorbadge.io/api/combined?path=hazda.github.io&label=Page%20Views&color=2563eb" alt="Visitor Count">
                 </a>
             </div>
             <p class="mb-0">&copy; 2026 Adam Hazda. All rights reserved. Built with modern web standards.</p>
@@ -667,7 +665,7 @@
         <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </button>
 
-    <!-- Script pro jazyky, scrollovací efekty, interaktivní světlo na kartách a tlačítko nahoru -->
+    <!-- Script -->
     <script>
         function setLanguage(lang) {
             if (lang === 'cz') {
@@ -713,7 +711,6 @@
             });
         });
 
-        /* Interaktivní skript pro světelný efekt pod kurzorem na kartách */
         document.addEventListener("mousemove", e => {
             for (const card of document.querySelectorAll(".card-custom")) {
                 const rect = card.getBoundingClientRect();
