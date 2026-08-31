@@ -22,6 +22,7 @@
             background-color: var(--bg-light); 
             line-height: 1.7;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         /* Top Navigation Bar */
         .top-bar {
@@ -82,7 +83,7 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Moderní karty s podporou interaktivního kurzorového světla */
+        /* Moderní karty s podporou kurzorového světla i dotykové odezvy pro mobily */
         .card-custom {
             position: relative;
             border: 1px solid rgba(226, 232, 240, 0.8);
@@ -94,12 +95,12 @@
             overflow: hidden;
         }
         
-        /* Interaktivní světelný efekt pod kurzorem (Spotlight glow) */
+        /* Světelný efekt pod kurzorem (na PC) */
         .card-custom::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(37, 99, 235, 0.06), transparent 40%);
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(37, 99, 235, 0.07), transparent 40%);
             z-index: 1;
             pointer-events: none;
             opacity: 0;
@@ -109,7 +110,6 @@
             opacity: 1;
         }
 
-        /* Zajištění, že obsah karet bude nad světelným efektem */
         .card-custom > * {
             position: relative;
             z-index: 2;
@@ -119,6 +119,12 @@
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
             border-color: #94a3b8;
+        }
+
+        /* Reakce na dotyk na mobilních zařízeních */
+        .card-custom:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease;
         }
         
         /* Watch Image Container */
@@ -165,7 +171,7 @@
             transform: scale(1.04);
         }
 
-        /* Karta pro Privacy Policy s obrázkem přes celé pozadí a jemnějším přechodem */
+        /* Karta pro Privacy Policy */
         .privacy-card-bg {
             position: relative;
             overflow: hidden;
@@ -200,7 +206,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
-        /* Zvýrazněné nadpisy hlavních sekcí */
         .main-section-heading {
             position: relative;
             display: inline-block;
@@ -279,11 +284,11 @@
             fill: white;
         }
 
-        /* Fade-in animace */
+        /* Plynulé scrollovací animace (fungují na mobilech i PC) */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         .fade-in-section.is-visible {
@@ -648,7 +653,7 @@
         </div>
     </section>
 
-    <!-- Footer s aktualizovanou cestou pro GitHub repozitář -->
+    <!-- Footer -->
     <footer class="py-4 bg-white border-top text-center text-muted small">
         <div class="container">
             <div class="mb-2">
