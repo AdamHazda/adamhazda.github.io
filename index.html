@@ -82,15 +82,39 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Moderní karty */
+        /* Moderní karty s podporou interaktivního kurzorového světla */
         .card-custom {
+            position: relative;
             border: 1px solid rgba(226, 232, 240, 0.8);
             border-radius: 20px;
             background: var(--card-bg);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
             height: 100%;
+            overflow: hidden;
         }
+        
+        /* Interaktivní světelný efekt pod kurzorem (Spotlight glow) */
+        .card-custom::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(37, 99, 235, 0.06), transparent 40%);
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .card-custom:hover::before {
+            opacity: 1;
+        }
+
+        /* Zajištění, že obsah karet bude nad světelným efektem */
+        .card-custom > * {
+            position: relative;
+            z-index: 2;
+        }
+
         .card-custom:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
@@ -153,7 +177,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
         }
-        /* Zesvětlený závoj přes obrázek pozadí, aby pozadí více vyniklo */
         .privacy-card-bg::before {
             content: '';
             position: absolute;
@@ -626,9 +649,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer s počítadlem návštěv přes GitHub / Visitor Badge -->
     <footer class="py-4 bg-white border-top text-center text-muted small">
         <div class="container">
+            <div class="mb-2">
+                <!-- Počítadlo návštěv (vložte svůj GitHub uživatelský účet/repozitář místo 'username/repo') -->
+                <a href="https://github.com/adamhazda" target="_blank">
+                    <img src="https://api.visitorbadge.io/api/combined?path=adamhazda.github.io&label=Page%20Views&color=2563eb" alt="Visitor Count">
+                </a>
+            </div>
             <p class="mb-0">&copy; 2026 Adam Hazda. All rights reserved. Built with modern web standards.</p>
         </div>
     </footer>
@@ -638,7 +667,7 @@
         <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </button>
 
-    <!-- Script pro jazyky, scrollovací efekty a tlačítko nahoru -->
+    <!-- Script pro jazyky, scrollovací efekty, interaktivní světlo na kartách a tlačítko nahoru -->
     <script>
         function setLanguage(lang) {
             if (lang === 'cz') {
@@ -682,6 +711,17 @@
             document.querySelectorAll('.fade-in-section').forEach(section => {
                 observer.observe(section);
             });
+        });
+
+        /* Interaktivní skript pro světelný efekt pod kurzorem na kartách */
+        document.addEventListener("mousemove", e => {
+            for (const card of document.querySelectorAll(".card-custom")) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            }
         });
 
         const backToTopButton = document.getElementById("backToTop");
