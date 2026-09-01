@@ -170,30 +170,6 @@
             transform: scale(1.06);
         }
 
-        /* Karta pro Privacy Policy */
-        .privacy-card-bg {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            background-image: url('privacy.png');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-        }
-        .privacy-card-bg::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(30, 41, 59, 0.55) 100%);
-            z-index: 1;
-        }
-        .privacy-card-content {
-            position: relative;
-            z-index: 2;
-        }
-
         .banner-panel-light {
             border-radius: 16px;
             background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
@@ -636,20 +612,18 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card-custom p-4 p-md-5 privacy-card-bg">
-                        <div class="privacy-card-content">
-                            <h5 class="text-white fw-bold h6 mb-3">
-                                <span class="lang-en">Privacy Policy</span>
-                                <span class="lang-cz">Ochrana soukromí</span>
-                            </h5>
-                            <div class="lang-en text-white opacity-95 small">
-                                <p class="mb-2">No personal user data is collected. Zero third-party trackers or intrusive ads across all apps.</p>
-                                <p class="mb-0">Direct Contact: <strong class="text-white">adam(at)hazda.cz</strong></p>
-                            </div>
-                            <div class="lang-cz text-white opacity-95 small">
-                                <p class="mb-2">Žádné sbírání osobních dat, sledovací skripty ani skryté reklamy v žádné z aplikací.</p>
-                                <p class="mb-0">Přímý kontakt: <strong class="text-white">adam(at)hazda.cz</strong></p>
-                            </div>
+                    <div class="card-custom p-4 h-100 border-0 shadow-none bg-transparent text-muted">
+                        <h5 class="text-dark fw-bold h6 mb-3">
+                            <span class="lang-en">Privacy Policy</span>
+                            <span class="lang-cz">Ochrana soukromí</span>
+                        </h5>
+                        <div class="lang-en">
+                            <p class="mb-2">No personal user data is collected. Zero third-party trackers or intrusive ads across all apps.</p>
+                            <p class="mb-0">Direct Contact: <strong class="text-dark">adam(at)hazda.cz</strong></p>
+                        </div>
+                        <div class="lang-cz">
+                            <p class="mb-2">Žádné sbírání osobních dat, sledovací skripty ani skryté reklamy v žádné z aplikací.</p>
+                            <p class="mb-0">Přímý kontakt: <strong class="text-dark">adam(at)hazda.cz</strong></p>
                         </div>
                     </div>
                 </div>
