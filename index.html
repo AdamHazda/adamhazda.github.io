@@ -229,6 +229,21 @@
             margin-bottom: 10px;
         }
 
+        /* Ikony pro spodní karty */
+        .info-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #eff6ff;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            border: 1px solid #dbeafe;
+        }
+
         /* Tlačítko zpět nahoru */
         #backToTop {
             position: fixed;
@@ -594,34 +609,48 @@
     <!-- Information / Footer Section -->
     <section class="py-5 bg-light fade-in-section">
         <div class="container py-3">
-            <div class="row g-4 text-small align-items-stretch">
+            <div class="row g-4 align-items-stretch">
+                <!-- About & Disclaimer -->
                 <div class="col-md-6">
-                    <div class="card-custom p-4 h-100 border-0 shadow-none bg-transparent ps-0 text-muted">
+                    <div class="card-custom p-4 h-100">
+                        <div class="info-icon-box">
+                            <!-- Ikona ozubeného kolečka / vývoje -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.93 2.93 0 1 1 0-5.86 2.93 2.93 0 0 1 0 5.86z"/>
+                            </svg>
+                        </div>
                         <h5 class="text-dark fw-bold h6 mb-3">
                             <span class="lang-en">About & Disclaimer</span>
                             <span class="lang-cz">O projektu & Prohlášení</span>
                         </h5>
-                        <div class="lang-en">
+                        <div class="lang-en text-muted small">
                             <p>I am an independent hobby developer crafting digital software and content for Wear OS and Android primarily for personal fulfillment and community utility. My portfolio includes free titles alongside select paid creations to support ongoing updates and future development.</p>
                             <p class="mb-0">All software and digital assets are provided "as is" without formal warranties of any kind. Use is entirely voluntary and at your own personal discretion.</p>
                         </div>
-                        <div class="lang-cz">
+                        <div class="lang-cz text-muted small">
                             <p>Jsem nezávislý tvůrce a hobby vývojář vyvíjející aplikace pro Wear OS a Android především pro radost a užitek komunity. Mé portfolio obsahuje bezplatné projekty i placené položky, které pomáhají financovat další rozvoj a aktualizace.</p>
                             <p class="mb-0">Veškerý obsah je poskytován „tak, jak je“, bez záruky. Používání aplikací je zcela dobrovolné a na vlastní odpovědnost uživatele.</p>
                         </div>
                     </div>
                 </div>
+                <!-- Privacy Policy -->
                 <div class="col-md-6">
-                    <div class="card-custom p-4 h-100 border-0 shadow-none bg-transparent text-muted">
+                    <div class="card-custom p-4 h-100">
+                        <div class="info-icon-box" style="background-color: #f0fdf4; color: #0d9488; border-color: #99f6e4;">
+                            <!-- Ikona škrabošky / soukromí -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 0 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L1 13.5A1.5 1.5 0 0 0 2.483 15h11.034A1.5 1.5 0 0 0 15 13.5l-.878-7.223A1.5 1.5 0 0 0 12.639 5H11zM3.423 6h9.154l.732 6H2.691l.732-6z"/>
+                            </svg>
+                        </div>
                         <h5 class="text-dark fw-bold h6 mb-3">
                             <span class="lang-en">Privacy Policy</span>
                             <span class="lang-cz">Ochrana soukromí</span>
                         </h5>
-                        <div class="lang-en">
+                        <div class="lang-en text-muted small">
                             <p class="mb-2">No personal user data is collected. Zero third-party trackers or intrusive ads across all apps.</p>
                             <p class="mb-0">Direct Contact: <strong class="text-dark">adam(at)hazda.cz</strong></p>
                         </div>
-                        <div class="lang-cz">
+                        <div class="lang-cz text-muted small">
                             <p class="mb-2">Žádné sbírání osobních dat, sledovací skripty ani skryté reklamy v žádné z aplikací.</p>
                             <p class="mb-0">Přímý kontakt: <strong class="text-dark">adam(at)hazda.cz</strong></p>
                         </div>
