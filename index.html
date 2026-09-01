@@ -83,28 +83,28 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Moderní karty s podporou kurzorového světla i dotykové odezvy pro mobily */
+        /* Moderní karty s vylepšenými efekty a dynamickým stínováním */
         .card-custom {
             position: relative;
             border: 1px solid rgba(226, 232, 240, 0.8);
             border-radius: 20px;
             background: var(--card-bg);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
             height: 100%;
             overflow: hidden;
         }
         
-        /* Světelný efekt pod kurzorem (na PC) */
+        /* Světelný efekt pod kurzorem + dynamický barevný odlesk */
         .card-custom::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(37, 99, 235, 0.07), transparent 40%);
+            background: radial-gradient(700px circle at var(--mouse-x) var(--mouse-y), rgba(37, 99, 235, 0.09), transparent 45%);
             z-index: 1;
             pointer-events: none;
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s ease;
         }
         .card-custom:hover::before {
             opacity: 1;
@@ -116,12 +116,11 @@
         }
 
         .card-custom:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
-            border-color: #94a3b8;
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 22px 40px -12px rgba(37, 99, 235, 0.12);
+            border-color: #cbd5e1;
         }
 
-        /* Reakce na dotyk na mobilních zařízeních */
         .card-custom:active {
             transform: scale(0.98);
             transition: transform 0.1s ease;
@@ -145,10 +144,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .card-custom:hover .watch-img-container img {
-            transform: scale(1.08);
+            transform: scale(1.12) rotate(2deg);
         }
 
         /* Herní sekce */
@@ -168,7 +167,7 @@
             min-height: 220px;
         }
         .game-img-wrapper:hover img {
-            transform: scale(1.04);
+            transform: scale(1.06);
         }
 
         /* Karta pro Privacy Policy */
@@ -204,6 +203,11 @@
             border: 1px solid #e2e8f0;
             font-weight: 500;
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .banner-panel-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
         .main-section-heading {
@@ -284,16 +288,16 @@
             fill: white;
         }
 
-        /* Plynulé scrollovací animace (fungují na mobilech i PC) */
+        /* Plynulé scrollovací animace (fade-in s mírným přiblížením) */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         .fade-in-section.is-visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         /* Language visibility rules */
@@ -323,7 +327,7 @@
                 <h1 class="display-3 fw-bold mb-3 tracking-tight text-white drop-shadow">Adam Hazda</h1>
                 <p class="lead text-light opacity-95 mb-0 mx-auto" style="max-width: 650px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
                     <span class="lang-en">Crafting clean, energy-efficient Wear OS watchfaces and engaging minimalist Android games designed for smooth daily performance.</span>
-                    <span class="lang-cz">Tvorba přehledných, energeticky úsporných ciferníků pro Wear OS a poutavých minimalistických Android her navržených pro plynulý každodenní chod.</span>
+                    <span class="lang-cz">Tvorba přehledných, energeticky úsporných ciferníků pro Wear OS a poutavých minimalistických Android her navržených pro plynulý chod.</span>
                 </p>
             </div>
         </div>
@@ -658,7 +662,7 @@
         <div class="container">
             <div class="mb-2">
                 <a href="https://github.com/AdamHazda/hazda.github.io" target="_blank">
-                    <img src="https://api.visitorbadge.io/api/combined?path=hazda.github.io&label=Page%20Views&color=2563eb" alt="Visitor Count">
+                    <img src="https://api.visitorbadge.io/api/combined?path=hazda.github.io&label=Page%20Views&countColor=2563eb&style=flat" alt="Visitor Count">
                 </a>
             </div>
             <p class="mb-0">&copy; 2026 Adam Hazda. All rights reserved. Built with modern web standards.</p>
@@ -705,6 +709,7 @@
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        entry.target.classList.is-visible = true;
                         entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     }
