@@ -709,7 +709,6 @@
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.is-visible = true;
                         entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     }
