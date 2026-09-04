@@ -95,7 +95,7 @@
             overflow: hidden;
         }
         
-        /* Světelný efekt pod kurzorem + dynamický barevný odlesk */
+        /* Světelný efekt pod kurzorem */
         .card-custom::before {
             content: "";
             position: absolute;
@@ -279,12 +279,16 @@
             fill: white;
         }
 
-        /* Plynulé scrollovací animace (fade-in s mírným přiblížením) */
+        /* Plynulé scrollovací animace - výchozí stav zobrazeno, pokud by JS selhal */
         .fade-in-section {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
+            opacity: 1;
+            transform: translateY(0);
             transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
+        }
+        .fade-in-section.not-loaded {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
         }
         .fade-in-section.is-visible {
             opacity: 1;
@@ -325,7 +329,7 @@
     </header>
 
     <!-- Watchfaces Section -->
-    <section class="py-5 section-watchfaces fade-in-section">
+    <section class="py-5 section-watchfaces fade-in-section not-loaded">
         <div class="container py-3">
             <div class="text-center mb-5">
                 <div class="main-section-heading">
@@ -347,7 +351,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-4 text-center mb-3 mb-sm-0">
                                 <div class="watch-img-container">
-                                    <img src="frontierwidgetplus.png" alt="Frontier Widget Plus">
+                                    <img src="frontierwidgetplus.png" alt="Frontier Widget Plus" width="100" height="100" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -377,7 +381,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-4 text-center mb-3 mb-sm-0">
                                 <div class="watch-img-container">
-                                    <img src="clearstyleanalog.png" alt="Clear Style Analog">
+                                    <img src="clearstyleanalog.png" alt="Clear Style Analog" width="100" height="100" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -402,7 +406,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-4 text-center mb-3 mb-sm-0">
                                 <div class="watch-img-container">
-                                    <img src="simplydigital.png" alt="Simply Digital">
+                                    <img src="simplydigital.png" alt="Simply Digital" width="100" height="100" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -432,7 +436,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-4 text-center mb-3 mb-sm-0">
                                 <div class="watch-img-container">
-                                    <img src="watchthis.png" alt="Watch This">
+                                    <img src="watchthis.png" alt="Watch This" width="100" height="100" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -457,7 +461,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-4 text-center mb-3 mb-sm-0">
                                 <div class="watch-img-container">
-                                    <img src="digitalphotobg.png" alt="Digital Photo Background">
+                                    <img src="digitalphotobg.png" alt="Digital Photo Background" width="100" height="100" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -482,7 +486,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-4 text-center mb-3 mb-sm-0">
                                 <div class="watch-img-container">
-                                    <img src="frontierwidgetcomplications.png" alt="Frontier Widget Complications">
+                                    <img src="frontierwidgetcomplications.png" alt="Frontier Widget Complications" width="100" height="100" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -519,7 +523,7 @@
     </section>
 
     <!-- Games Section -->
-    <section class="py-5 section-games fade-in-section">
+    <section class="py-5 section-games fade-in-section not-loaded">
         <div class="container py-3">
             <div class="text-center mb-5">
                 <div class="main-section-heading">
@@ -541,7 +545,7 @@
                         <div class="row align-items-center g-4">
                             <div class="col-md-5">
                                 <div class="game-img-wrapper">
-                                    <img src="cyberxot.png" alt="Cyber XOT">
+                                    <img src="cyberxot.png" alt="Cyber XOT" width="400" height="220" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-md-7 ps-md-4">
@@ -575,7 +579,7 @@
                         <div class="row align-items-center g-4">
                             <div class="col-md-5">
                                 <div class="game-img-wrapper">
-                                    <img src="wrigglebites.png" alt="Wriggle Bites">
+                                    <img src="wrigglebites.png" alt="Wriggle Bites" width="400" height="220" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-md-7 ps-md-4">
@@ -607,14 +611,13 @@
     </section>
 
     <!-- Information / Footer Section -->
-    <section class="py-5 bg-light fade-in-section">
+    <section class="py-5 bg-light fade-in-section not-loaded">
         <div class="container py-3">
             <div class="row g-4 align-items-stretch">
                 <!-- About & Disclaimer -->
                 <div class="col-md-6">
                     <div class="card-custom p-4 h-100">
                         <div class="info-icon-box">
-                            <!-- Ikona ozubeného kolečka / vývoje -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.93 2.93 0 1 1 0-5.86 2.93 2.93 0 0 1 0 5.86z"/>
                             </svg>
@@ -637,7 +640,6 @@
                 <div class="col-md-6">
                     <div class="card-custom p-4 h-100">
                         <div class="info-icon-box" style="background-color: #f0fdf4; color: #0d9488; border-color: #99f6e4;">
-                            <!-- Ikona škrabošky / soukromí -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 0 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L1 13.5A1.5 1.5 0 0 0 2.483 15h11.034A1.5 1.5 0 0 0 15 13.5l-.878-7.223A1.5 1.5 0 0 0 12.639 5H11zM3.423 6h9.154l.732 6H2.691l.732-6z"/>
                             </svg>
@@ -665,7 +667,7 @@
         <div class="container">
             <div class="mb-2">
                 <a href="https://github.com/AdamHazda/hazda.github.io" target="_blank">
-                    <img src="https://api.visitorbadge.io/api/combined?path=hazda.github.io&label=Page%20Views&countColor=2563eb&style=flat" alt="Visitor Count">
+                    <img src="https://api.visitorbadge.io/api/combined?path=hazda.github.io&label=Page%20Views&countColor=2563eb&style=flat" alt="Visitor Count" width="88" height="20" loading="lazy">
                 </a>
             </div>
             <p class="mb-0">&copy; 2026 Adam Hazda. All rights reserved. Built with modern web standards.</p>
@@ -706,12 +708,13 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1
+                threshold: 0.05
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        entry.target.classList.remove('not-loaded');
                         entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     }
@@ -749,6 +752,6 @@
         }
     </script>
     <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
