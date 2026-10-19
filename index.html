@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Hazda — Wear OS Watchfaces & Indie Games</title>
-    <meta name="description" content="Portfolio of independent Wear OS watchfaces and minimalist Android games by Adam Hazda.">
+    <title>Adam Hazda — Wear OS Watchfaces, Indie Games & 3D Printing</title>
+    <meta name="description" content="Portfolio of independent Wear OS watchfaces, minimalist Android games, and 3D printing tools by Adam Hazda.">
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome Icons -->
@@ -84,6 +84,10 @@
         .section-games {
             background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
             border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .section-3dprinting {
+            background-color: #f8fafc;
             border-bottom: 1px solid #e2e8f0;
         }
 
@@ -320,13 +324,13 @@
         <div class="container py-4">
             <div class="mx-auto" style="max-width: 800px;">
                 <span class="badge rounded-pill bg-primary bg-opacity-75 text-white px-3 py-2 mb-3 fw-normal" style="letter-spacing: 0.5px;">
-                    <span class="lang-en">ANDROID & WEAR OS ECOSYSTEM</span>
-                    <span class="lang-cz">EKOSYSTÉM ANDROID & WEAR OS</span>
+                    <span class="lang-en">SOFTWARE, GAMES & 3D PRINTING</span>
+                    <span class="lang-cz">SOFTWARE, HRY & 3D TISK</span>
                 </span>
                 <h1 class="display-3 fw-bold mb-3 tracking-tight text-white drop-shadow">Adam Hazda</h1>
                 <p class="lead text-light opacity-95 mb-0 mx-auto" style="max-width: 650px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                    <span class="lang-en">Crafting clean, energy-efficient Wear OS watchfaces and engaging minimalist Android games designed for smooth daily performance.</span>
-                    <span class="lang-cz">Tvorba přehledných, energeticky úsporných ciferníků pro Wear OS a poutavých minimalistických Android her navržených pro plynulý chod.</span>
+                    <span class="lang-en">Crafting clean Wear OS watchfaces, minimalist Android games, and useful online 3D printing tools.</span>
+                    <span class="lang-cz">Tvorba přehledných ciferníků pro Wear OS, minimalistických Android her a užitečných online nástrojů pro 3D tisk.</span>
                 </p>
             </div>
         </div>
@@ -549,7 +553,42 @@
             </div>
 
             <div class="row g-5 justify-content-center">
-                <!-- Game 1 -->
+                <!-- Game 1: Chess -->
+                <div class="col-lg-10">
+                    <div class="card-custom p-4 p-md-5 border-0 shadow-sm">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-5">
+                                <div class="game-img-wrapper">
+                                    <img src="chess.png" alt="Chess" width="400" height="220" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="col-md-7 ps-md-4">
+                                <span class="badge-custom mb-3 d-inline-block" style="background-color: #fdf4ff; color: #a21caf; border-color: #f5d0fe;">
+                                    <span class="lang-en">Classic Strategy Board Game</span>
+                                    <span class="lang-cz">Klasická strategická desková hra</span>
+                                </span>
+                                <h3 class="h4 fw-bold text-dark mb-3">Chess</h3>
+                                <div class="text-muted small mb-4" style="line-height: 1.8;">
+                                    <div class="lang-en">
+                                        <p class="mb-2">Timeless strategic chess experience designed for clean mobile play. Challenge yourself or play locally with friends in a polished, distraction-free environment.</p>
+                                        <p class="mb-0">Smooth mechanics, elegant board design, and 100% offline functionality.</p>
+                                    </div>
+                                    <div class="lang-cz">
+                                        <p class="mb-2">Nadčasová strategická šachová partie vytvořená pro pohodlné hraní na mobilu. Zlepšete své taktické schopnosti nebo si zahrajte s přáteli v čistém a přehledném prostředí bez rušivých vlivů.</p>
+                                        <p class="mb-0">Plynulé ovládání, elegantní design šachovnice a plná funkčnost zcela offline.</p>
+                                    </div>
+                                </div>
+                                <div class="text-start">
+                                    <a href="https://play.google.com/store/apps/details?id=cz.hazda.chess" class="btn btn-outline-primary btn-sm rounded-pill px-3" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-google-play me-1"></i> Google Play
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 2: Cyber XOT -->
                 <div class="col-lg-10">
                     <div class="card-custom p-4 p-md-5 border-0 shadow-sm">
                         <div class="row align-items-center g-4">
@@ -584,7 +623,7 @@
                     </div>
                 </div>
 
-                <!-- Game 2 -->
+                <!-- Game 3: Wriggle Bites -->
                 <div class="col-lg-10">
                     <div class="card-custom p-4 p-md-5 border-0 shadow-sm">
                         <div class="row align-items-center g-4">
@@ -622,7 +661,75 @@
         </div>
     </section>
 
-    <!-- Information / Footer Section -->
+    <!-- 3D Printing & Tools Section -->
+    <section class="py-5 section-3dprinting fade-in-section not-loaded">
+        <div class="container py-3">
+            <div class="text-center mb-5">
+                <div class="main-section-heading">
+                    <h2 class="section-title h3 mb-0">
+                        <span class="lang-en">3D Printing & Tools</span>
+                        <span class="lang-cz">3D tisk & Nástroje</span>
+                    </h2>
+                </div>
+                <p class="text-muted mx-auto mt-3" style="max-width: 550px;">
+                    <span class="lang-en">Exploring the world of 3D printing, custom models, and practical online utilities.</span>
+                    <span class="lang-cz">Objevování světa 3D tisku, vlastních modelů a praktických online nástrojů.</span>
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Tool 1: Printables Profile -->
+                <div class="col-md-6">
+                    <div class="card-custom p-4 p-md-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-center mb-3">
+                                <div class="watch-img-container" style="border-radius: 16px; width: 100%; height: 160px;">
+                                    <img src="printables.png" alt="Printables Profile" width="400" height="160" loading="lazy" style="object-fit: cover;">
+                                </div>
+                            </div>
+                            <span class="badge bg-light text-secondary border fw-normal mb-2" style="font-size: 0.7rem;">3D Models</span>
+                            <h4 class="h5 fw-bold text-dark mb-2">Printables.com Profile</h4>
+                            <p class="text-muted small mb-4">
+                                <span class="lang-en">Check out my public 3D models, prints, and designs shared with the maker community.</span>
+                                <span class="lang-cz">Podívejte se na mé veřejné 3D modely, výtisky a návrhy sdílené s kutilskou komunitou.</span>
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <a href="https://www.printables.com/@AdamHazda_5352846" class="btn btn-outline-primary btn-sm rounded-pill px-4" target="_blank" rel="noopener">
+                                <i class="fa-solid fa-cube me-1"></i> Printables Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: BoxGenerator -->
+                <div class="col-md-6">
+                    <div class="card-custom p-4 p-md-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-center mb-3">
+                                <div class="watch-img-container" style="border-radius: 16px; width: 100%; height: 160px;">
+                                    <img src="boxgenerator.png" alt="Box Generator Tool" width="400" height="160" loading="lazy" style="object-fit: cover;">
+                                </div>
+                            </div>
+                            <span class="badge bg-light text-secondary border fw-normal mb-2" style="font-size: 0.7rem;">Online Utility</span>
+                            <h4 class="h5 fw-bold text-dark mb-2">Box Generator Tool</h4>
+                            <p class="text-muted small mb-4">
+                                <span class="lang-en">A handy online tool designed to quickly generate custom box designs and dimensions tailored for your 3D printing projects.</span>
+                                <span class="lang-cz">Praktický online nástroj navržený pro rychlé generování vlastních krabiček a rozměrů na míru pro vaše projekty z 3D tisku.</span>
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <a href="https://boxgenerator.hazda.cz" class="btn btn-outline-primary btn-sm rounded-pill px-4" target="_blank" rel="noopener">
+                                <i class="fa-solid fa-toolbox me-1"></i> boxgenerator.hazda.cz
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section -->
     <section class="py-5 bg-light fade-in-section not-loaded">
         <div class="container py-3">
             <div class="row g-4 align-items-stretch">
@@ -639,11 +746,11 @@
                             <span class="lang-cz">O projektu & Prohlášení</span>
                         </h5>
                         <div class="lang-en text-muted small">
-                            <p>I am an independent hobby developer crafting digital software and content for Wear OS and Android primarily for personal fulfillment and community utility. My portfolio includes free titles alongside select paid creations to support ongoing updates and future development.</p>
+                            <p>I am an independent hobby developer and maker crafting digital software, 3D models, and content for Wear OS, Android, and makers primarily for personal fulfillment and community utility. My portfolio includes free titles alongside select paid creations to support ongoing updates and future development.</p>
                             <p class="mb-0">All software and digital assets are provided "as is" without formal warranties of any kind. Use is entirely voluntary and at your own personal discretion.</p>
                         </div>
                         <div class="lang-cz text-muted small">
-                            <p>Jsem nezávislý tvůrce a hobby vývojář vyvíjející aplikace pro Wear OS a Android především pro radost a užitek komunity. Mé portfolio obsahuje bezplatné projekty i placené položky, které pomáhají financovat další rozvoj a aktualizace.</p>
+                            <p>Jsem nezávislý tvůrce a hobby vývojář vytvářející aplikace, 3D modely a obsah pro Wear OS, Android i kutilskou komunitu. Mé portfolio obsahuje bezplatné projekty i placené položky, které pomáhají financovat další rozvoj a aktualizace.</p>
                             <p class="mb-0">Veškerý obsah je poskytován „tak, jak je“, bez záruky. Používání aplikací je zcela dobrovolné a na vlastní odpovědnost uživatele.</p>
                         </div>
                     </div>
@@ -682,6 +789,14 @@
                     <img src="https://api.visitorbadge.io/api/combined?path=hazda.github.io&label=Page%20Views&countColor=2563eb&style=flat" alt="Visitor Count" width="88" height="20" loading="lazy">
                 </a>
             </div>
+            
+            <!-- Buy Me a Coffee Tlačítko v patičce -->
+            <div class="my-3">
+                <a href="https://www.buymeacoffee.com/hazda.cz" target="_blank" rel="noopener">
+                    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hazda.cz&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" alt="Buy Me A Coffee" style="height: 40px;" />
+                </a>
+            </div>
+
             <p class="mb-1">
                 <span class="lang-en">&copy; 2026 Adam Hazda. All rights reserved. Built with modern web standards.</span>
                 <span class="lang-cz">&copy; 2026 Adam Hazda. Všechna práva vyhrazena. Vytvořeno pomocí moderních webových standardů.</span>
