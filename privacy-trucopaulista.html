@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dvojjazyčná stránka / Bilingual Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .lang-switch button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .lang-switch button:hover {
+            background-color: #0056b3;
+        }
+        /* Třída pro skrytí jazykových bloků */
+        .lang-en {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="lang-cs">Vítejte na mé stránce</h1>
+        <h1 class="lang-en">Welcome to my page</h1>
+        
+        <div class="lang-switch">
+            <button id="switch-btn" onclick="toggleLanguage()">Switch to English</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Český obsah -->
+        <div class="lang-cs">
+            <h2>O nás</h2>
+            <p>Tento web slouží jako ukázka jednoduchého přepínání jazyků mezi češtinou a angličtinou přímo v prohlížeči pomocí JavaScriptu.</p>
+            <p>Pro přepnutí jazyka stačí kliknout na tlačítko v pravém horním rohu.</p>
+        </div>
+
+        <!-- Anglický obsah -->
+        <div class="lang-en">
+            <h2>About Us</h2>
+            <p>This website serves as a demonstration of simple language switching between Czech and English directly in the browser using JavaScript.</p>
+            <p>To switch the language, simply click the button in the top right corner.</p>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = 'cs';
+
+        function toggleLanguage() {
+            const elementsCs = document.querySelectorAll('.lang-cs');
+            const elementsEn = document.querySelectorAll('.lang-en');
+            const switchBtn = document.getElementById('switch-btn');
+            const htmlTag = document.documentElement;
+
+            if (currentLang === 'cs') {
+                // Přepnout na angličtinu
+                elementsCs.forEach(el => el.style.display = 'none');
+                elementsEn.forEach(el => el.style.display = 'block');
+                switchBtn.textContent = 'Přepnout do češtiny';
+                htmlTag.setAttribute('lang', 'en');
+                currentLang = 'en';
+            } else {
+                // Přepnout na češtinu
+                elementsEn.forEach(el => el.style.display = 'none');
+                elementsCs.forEach(el => el.style.display = 'block');
+                switchBtn.textContent = 'Switch to English';
+                htmlTag.setAttribute('lang', 'cs');
+                currentLang = 'cs';
+            }
+        }
+    </script>
+
+</body>
+</html>
