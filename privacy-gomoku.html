@@ -1,71 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs" data-lang="cz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Gomoku</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #666;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ochrana soukromí: Gomoku Zen | Privacy Policy: Gomoku Zen</title>
+<meta name="description" content="Zásady ochrany soukromí aplikace Gomoku Zen: Five in a Row (reklamy Google AdMob). Privacy policy of the Gomoku Zen: Five in a Row app (Google AdMob ads).">
+<meta name="theme-color" content="#070b1f">
+<link rel="canonical" href="https://hazda.cz/privacy-gomoku">
+<script>
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem('preferred_lang'); } catch (e) {}
+    if (l !== 'cz' && l !== 'en') l = /^cs/i.test(navigator.language || '') ? 'cz' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l === 'cz' ? 'cs' : 'en';
+  })();
+</script>
+<link rel="stylesheet" href="/legal.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last updated:</strong> January 2026</p>
 
-        <p>This Privacy Policy applies to the <strong>Gomoku</strong> mobile application (hereinafter referred to as the "App"), developed by <strong>Adam Hazda</strong> (hereinafter referred to as the "Developer").</p>
-
-        <h2>1. Information Collection and Use</h2>
-        <p>The App is designed to respect your privacy:</p>
-        <ul>
-            <li><strong>Personal Data:</strong> The Developer does not collect, store, or process any direct personal data (such as names, email addresses, phone numbers, or location). All game data and statistics are stored locally on your device.</li>
-            <li><strong>Game Progress:</strong> The state of ongoing games and settings are saved exclusively in your device's local storage.</li>
-        </ul>
-
-        <h2>2. Third-Party Services</h2>
-        <p>The App uses trusted third-party services that may collect certain technical data in accordance with their own respective privacy policies:</p>
-        <ul>
-            <li><strong>Google AdMob (Ads):</strong> The App uses Google AdMob to display banner and video ads. AdMob may collect anonymous device identifiers and interaction data with ads for personalization and performance measurement. For more information, please review the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
-            <li><strong>Google Play Billing (Purchases):</strong> Google Play is used to process one-in-app purchases (PRO version). Financial transactions and payment details are handled exclusively by Google; the Developer has no access to your credit card or bank details.</li>
-        </ul>
-
-        <h2>3. Security</h2>
-        <p>The Developer ensures that the App remains secure and interacts exclusively with official Google services for ads and billing.</p>
-
-        <h2>4. Changes to This Privacy Policy</h2>
-        <p>This Privacy Policy may be updated from time to time. Any changes will be posted on this page.</p>
-
-        <h2>5. Contact Us</h2>
-        <p>If you have any questions or suggestions about this Privacy Policy, please contact me at:</p>
-        <p><strong>Email:</strong> <a href="mailto:adam@hazda.cz">adam@hazda.cz</a></p>
-
-        <div class="footer">
-            <p>&copy; 2026 Adam Hazda. All rights reserved.</p>
-        </div>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">← Adam Hazda</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-en" data-set-lang="en">EN</button>
+      <button type="button" id="btn-cz" data-set-lang="cz">CZ</button>
     </div>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<!-- ====================== ČESKY ====================== -->
+<div class="lang-cz">
+  <h1>Ochrana soukromí: Gomoku Zen</h1>
+  <p class="meta">Aplikace <strong>Gomoku Zen: Five in a Row</strong> pro Android · účinné od 26. října 2026</p>
+
+  <section class="card notice">
+    <h2>Důležité: aplikace zobrazuje reklamy</h2>
+    <p>Na rozdíl od mých ostatních aplikací zobrazuje Gomoku Zen reklamy prostřednictvím <strong>Google AdMob</strong>. <strong>Reklamní sítě třetích stran, včetně Googlu, mohou sbírat identifikátory zařízení a další údaje</strong>, aby reklamy zobrazovaly, měřily jejich výkon a (jen s vaším souhlasem) přizpůsobovaly vašim zájmům. Své rozhodnutí můžete kdykoliv změnit v <a href="#souhlas">nastavení souhlasu</a> níže.</p>
+  </section>
+
+  <section class="card">
+    <h2>1. Kdo údaje zpracovává</h2>
+    <p>Vývojář aplikace: <strong>Adam Hazda</strong>, IČO: 30083991, podnikající dle živnostenského zákona, zapsaný v Živnostenském rejstříku (Městský úřad Svitavy), neplátce DPH.</p>
+    <!-- TODO: doplnit adresu místa podnikání -->
+    <p>Kontakt: <a href="mailto:adam@hazda.cz">adam@hazda.cz</a></p>
+    <p>Obecné zásady webu a ostatních aplikací: <a href="/privacy">hazda.cz/privacy</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. Co zůstává jen ve vašem zařízení</h2>
+    <p>Já sám <strong>nesbírám žádné osobní údaje</strong> (jména, e-maily, telefonní čísla ani přesnou polohu), nemám vlastní servery, na které by aplikace data odesílala, a nevytvářím uživatelské účty.</p>
+    <ul>
+      <li><strong>Rozehrané partie a nastavení</strong> se ukládají pouze v úložišti vašeho zařízení.</li>
+      <li><strong>Herní statistiky</strong> zůstávají lokálně v zařízení.</li>
+    </ul>
+    <p>Odinstalováním aplikace se tato data z vašeho zařízení smažou.</p>
+  </section>
+
+  <section class="card" id="reklamy">
+    <h2>3. Reklamy a reklamní sítě třetích stran</h2>
+    <p>Aplikace zobrazuje bannerové a videoreklamy ze služby <strong>Google AdMob</strong> (Google Ireland Limited a Google LLC). Při zobrazení reklamy mohou AdMob a reklamní partneři Googlu zpracovávat například:</p>
+    <ul>
+      <li><strong>reklamní identifikátor zařízení</strong> (Android Advertising ID) a další identifikátory zařízení nebo aplikace,</li>
+      <li><strong>IP adresu</strong> a z ní odvozenou přibližnou polohu (země, region),</li>
+      <li><strong>technické údaje o zařízení</strong> (model, verze systému, jazyk, velikost displeje, operátor, typ připojení),</li>
+      <li><strong>údaje o interakci s reklamou</strong> (zobrazení, kliknutí, dokoukání videa) a o používání aplikace,</li>
+      <li><strong>diagnostické údaje</strong> (např. hlášení o chybách reklam).</li>
+    </ul>
+    <p>Tyto údaje slouží k zobrazení reklam, omezení opakování stejné reklamy, měření výkonu reklam, ochraně před podvody a zneužitím a – pokud to povolíte – k <strong>personalizaci reklam</strong> podle vašich zájmů. Google zpracovává tyto údaje jako samostatný správce podle vlastních zásad: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Jak Google používá údaje z webů a aplikací svých partnerů</a> a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Zásady ochrany soukromí Google</a>.</p>
+    <p>Jako vývojář k reklamním údajům jednotlivých uživatelů přístup nemám. Dostávám pouze souhrnné reporty (počet zobrazení, výnosy, země).</p>
+    <h3>Personalizované a nepersonalizované reklamy</h3>
+    <ul>
+      <li><strong>Se souhlasem</strong> mohou být reklamy přizpůsobeny vašim zájmům na základě reklamního identifikátoru a dalších údajů.</li>
+      <li><strong>Bez souhlasu</strong> se zobrazují jen nepersonalizované reklamy. I ty mohou využívat omezené údaje (např. přibližnou polohu a obsah aplikace) k doručení reklamy, omezení frekvence, měření a ochraně před podvody.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="souhlas">
+    <h2>4. Souhlas a jeho nastavení</h2>
+    <p><strong>Právní základ:</strong> zpracování údajů pro personalizované reklamy probíhá na základě vašeho souhlasu (čl. 6 odst. 1 písm. a) GDPR). V zemích Evropského hospodářského prostoru, ve Spojeném království a ve Švýcarsku se při prvním spuštění zobrazí formulář pro udělení souhlasu s reklamami (platforma Google pro správu souhlasu).</p>
+    <p><strong>Jak souhlas změnit nebo odvolat:</strong></p>
+    <ul>
+      <li><strong>V aplikaci:</strong> otevřete <em>Nastavení</em> a zvolte položku pro nastavení soukromí a reklam (změna souhlasu s reklamami). Zde můžete svou volbu kdykoliv upravit nebo odvolat.</li>
+      <li><strong>V systému Android:</strong> v <em>Nastavení → Google → Všechny služby → Reklamy</em> (název se může lišit podle výrobce) můžete reklamní ID smazat nebo vypnout personalizaci reklam.</li>
+      <li><strong>V účtu Google:</strong> personalizaci reklam spravujete v <a href="https://adssettings.google.com" target="_blank" rel="noopener">nastavení reklam Google</a>.</li>
+    </ul>
+    <p>Odvolání souhlasu nemá vliv na zákonnost zpracování před jeho odvoláním. Reklamy se v aplikaci mohou zobrazovat i po odvolání souhlasu, ale už jen jako nepersonalizované.</p>
+  </section>
+
+  <section class="card">
+    <h2>5. Nákupy přes Google Play</h2>
+    <p>Aplikace nabízí volitelný jednorázový nákup <strong>verze PRO</strong> prostřednictvím <strong>Google Play Billing</strong>. Platbu a platební údaje zpracovává výhradně Google. Já k číslu karty ani bankovním údajům nemám přístup a dozvídám se pouze, že nákup proběhl.</p>
+  </section>
+
+  <section class="card">
+    <h2>6. Děti</h2>
+    <p>Aplikace není určena dětem mladším 13 let a vědomě od dětí osobní údaje nesbírám. Pokud se domníváte, že aplikaci používá dítě, kontaktujte mě na adrese <a href="mailto:adam@hazda.cz">adam@hazda.cz</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>7. Vaše práva</h2>
+    <p>Podle GDPR máte právo na přístup k údajům, jejich opravu nebo výmaz, omezení zpracování, přenositelnost, právo vznést námitku a právo odvolat souhlas. U údajů zpracovávaných pro reklamy se na Google můžete obrátit přímo (viz odkazy výše). Mě můžete kontaktovat na <a href="mailto:adam@hazda.cz">adam@hazda.cz</a>.</p>
+    <p>Stížnost můžete podat u dozorového úřadu: <a href="https://www.uoou.gov.cz" target="_blank" rel="noopener">Úřad pro ochranu osobních údajů</a>, Pplk. Sochora 27, 170 00 Praha 7.</p>
+  </section>
+
+  <section class="card">
+    <h2>8. Změny těchto zásad</h2>
+    <p>Zásady mohu příležitostně aktualizovat, např. při změně reklamních služeb nebo legislativy. Aktuální znění je vždy na této stránce.</p>
+  </section>
+</div>
+
+<!-- ====================== ENGLISH ====================== -->
+<div class="lang-en">
+  <h1>Privacy: Gomoku Zen</h1>
+  <p class="meta">Android app <strong>Gomoku Zen: Five in a Row</strong> · effective October 26, 2026</p>
+
+  <section class="card notice">
+    <h2>Important: this app shows ads</h2>
+    <p>Unlike my other apps, Gomoku Zen shows ads through <strong>Google AdMob</strong>. <strong>Third-party ad networks, including Google, may collect device identifiers and other data</strong> to deliver ads, measure their performance and (only with your consent) personalize them to your interests. You can change your decision at any time in the <a href="#consent">consent settings</a> below.</p>
+  </section>
+
+  <section class="card">
+    <h2>1. Who processes data</h2>
+    <p>App developer: <strong>Adam Hazda</strong>, Company ID (IČO): 30083991, sole trader operating under the Czech Trade Licensing Act, registered in the Trade Register (Municipal Office of Svitavy), not a VAT payer.</p>
+    <p>Contact: <a href="mailto:adam@hazda.cz">adam@hazda.cz</a></p>
+    <p>General policy for the website and my other apps: <a href="/privacy">hazda.cz/privacy</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. What stays only on your device</h2>
+    <p>I myself <strong>do not collect any personal data</strong> (names, emails, phone numbers or precise location), I have no servers the app sends data to, and I do not create user accounts.</p>
+    <ul>
+      <li><strong>Games in progress and settings</strong> are stored only in your device's storage.</li>
+      <li><strong>Game statistics</strong> stay locally on the device.</li>
+    </ul>
+    <p>Uninstalling the app removes this data from your device.</p>
+  </section>
+
+  <section class="card">
+    <h2>3. Ads and third-party ad networks</h2>
+    <p>The app shows banner and video ads from <strong>Google AdMob</strong> (Google Ireland Limited and Google LLC). When an ad is shown, AdMob and Google's advertising partners may process, for example:</p>
+    <ul>
+      <li><strong>the device advertising identifier</strong> (Android Advertising ID) and other device or app identifiers,</li>
+      <li><strong>your IP address</strong> and approximate location derived from it (country, region),</li>
+      <li><strong>technical device data</strong> (model, OS version, language, screen size, carrier, connection type),</li>
+      <li><strong>ad interaction data</strong> (impressions, clicks, video views) and app usage data,</li>
+      <li><strong>diagnostic data</strong> (such as ad error reports).</li>
+    </ul>
+    <p>This data is used to show ads, limit how often the same ad repeats, measure ad performance, prevent fraud and abuse and, if you allow it, to <strong>personalize ads</strong> to your interests. Google processes this data as an independent controller under its own policies: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use its services</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+    <p>As the developer I have no access to individual users' advertising data. I only receive aggregated reports (impressions, revenue, countries).</p>
+    <h3>Personalized and non-personalized ads</h3>
+    <ul>
+      <li><strong>With your consent</strong>, ads may be tailored to your interests using the advertising identifier and other data.</li>
+      <li><strong>Without consent</strong>, only non-personalized ads are shown. These may still use limited data (such as approximate location and app content) to deliver ads, cap frequency, measure performance and prevent fraud.</li>
+    </ul>
+  </section>
+
+  <section class="card" id="consent">
+    <h2>4. Consent and how to manage it</h2>
+    <p><strong>Legal basis:</strong> processing for personalized ads is based on your consent (Art. 6(1)(a) GDPR). In the European Economic Area, the United Kingdom and Switzerland, an ad consent form (Google's consent management platform) is shown the first time you open the app.</p>
+    <p><strong>How to change or withdraw consent:</strong></p>
+    <ul>
+      <li><strong>In the app:</strong> open <em>Settings</em> and choose the privacy and ads option (change ad consent). You can adjust or withdraw your choice there at any time.</li>
+      <li><strong>In Android:</strong> in <em>Settings → Google → All services → Ads</em> (the name may differ by manufacturer) you can delete your advertising ID or turn off ad personalization.</li>
+      <li><strong>In your Google account:</strong> manage ad personalization in <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ad Settings</a>.</li>
+    </ul>
+    <p>Withdrawing consent does not affect the lawfulness of processing before withdrawal. Ads may still appear in the app after you withdraw consent, but only as non-personalized ads.</p>
+  </section>
+
+  <section class="card">
+    <h2>5. Purchases via Google Play</h2>
+    <p>The app offers an optional one-time purchase of the <strong>PRO version</strong> through <strong>Google Play Billing</strong>. Google alone processes the payment and payment details. I have no access to your card number or bank details and only learn that a purchase was made.</p>
+  </section>
+
+  <section class="card">
+    <h2>6. Children</h2>
+    <p>The app is not intended for children under 13 and I do not knowingly collect personal data from children. If you believe a child is using the app, contact me at <a href="mailto:adam@hazda.cz">adam@hazda.cz</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>7. Your rights</h2>
+    <p>Under the GDPR you have the right of access, rectification, erasure, restriction of processing, data portability, the right to object and the right to withdraw consent. For data processed for advertising, you can contact Google directly (see the links above). You can contact me at <a href="mailto:adam@hazda.cz">adam@hazda.cz</a>.</p>
+    <p>You may lodge a complaint with the supervisory authority: the <a href="https://www.uoou.gov.cz" target="_blank" rel="noopener">Office for Personal Data Protection</a> (Úřad pro ochranu osobních údajů), Pplk. Sochora 27, 170 00 Prague 7, Czech Republic.</p>
+  </section>
+
+  <section class="card">
+    <h2>8. Changes to this policy</h2>
+    <p>I may update this policy occasionally, for example when advertising services or the law change. The current version is always on this page.</p>
+  </section>
+</div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="lang-cz">Adam Hazda, IČO: 30083991. Podnikající dle živnostenského zákona, zapsaný v Živnostenském rejstříku (Městský úřad Svitavy). Neplátce DPH.</p>
+    <p class="lang-en">Adam Hazda, Company ID (IČO): 30083991. Sole trader operating under the Czech Trade Licensing Act, registered in the Trade Register (Municipal Office of Svitavy). Not a VAT payer.</p>
+    <p>
+      <a href="/"><span class="lang-cz">Domů</span><span class="lang-en">Home</span></a> ·
+      <a href="/privacy"><span class="lang-cz">Obecné zásady soukromí</span><span class="lang-en">General privacy policy</span></a>
+    </p>
+    <p>&copy; 2026 Adam Hazda</p>
+  </div>
+</footer>
+
+<script src="/legal.js"></script>
 </body>
 </html>

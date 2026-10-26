@@ -1,0 +1,70 @@
+/* Sdílený vzhled právních stránek (privacy.html, privacy-gomoku.html).
+   Záměrně bez externích písem, aby tyto stránky nevolaly žádné služby třetích stran. */
+:root {
+  --bg: #070b1f;
+  --surface: #0d1230;
+  --surface-2: #131a42;
+  --line: rgba(160, 170, 255, .16);
+  --text: #e8ebff;
+  --muted: #a9b1d9;
+  --violet: #8b7bff;
+  --cyan: #3fd2ff;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: 1.0625rem; line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--cyan); text-underline-offset: 3px; }
+a:hover { color: var(--text); }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: min(820px, 100% - 40px); margin-inline: auto; }
+
+[data-lang="cz"] .lang-en, [data-lang="en"] .lang-cz { display: none !important; }
+
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(7, 11, 31, .85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 58px; }
+.brand { color: var(--text); font-weight: 800; text-decoration: none; letter-spacing: -.01em; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.lang button {
+  font: inherit; font-size: .8rem; font-weight: 600; color: var(--muted);
+  background: none; border: 0; padding: 4px 12px; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--violet); color: #0a0c24; }
+
+main { padding: 56px 0 40px; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.08; letter-spacing: -.03em; margin: 0 0 8px; }
+.meta { color: var(--muted); font-size: .92rem; margin: 0 0 32px; }
+.lead { color: var(--muted); font-size: 1.1rem; margin: 0 0 28px; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+  padding: 24px 26px; margin-bottom: 18px;
+}
+.card h2 { font-size: 1.25rem; letter-spacing: -.01em; margin: 0 0 10px; }
+.card h3 { font-size: 1.02rem; margin: 18px 0 6px; }
+.card p, .card li { color: var(--muted); }
+.card p { margin: 0 0 12px; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.card ul { margin: 0 0 12px; padding-left: 22px; }
+.card li { margin-bottom: 6px; }
+.card strong { color: var(--text); font-weight: 600; }
+.notice {
+  border-color: rgba(63, 210, 255, .4); background: linear-gradient(180deg, rgba(63,210,255,.07), var(--surface));
+}
+table { width: 100%; border-collapse: collapse; font-size: .93rem; margin: 6px 0 4px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--muted); }
+th { color: var(--text); font-weight: 600; }
+.tablewrap { overflow-x: auto; }
+.cc-link { background: none; border: 0; padding: 0; font: inherit; color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.cc-link:hover { color: var(--text); }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0 48px; text-align: center; color: var(--muted); font-size: .88rem; }
+footer p { margin: 0 0 8px; }
