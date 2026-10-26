@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPLR2VH8XC"></script>
+<!-- Google Analytics (GA4) + Consent Mode v2.
+     Skript gtag.js se NENAČTE, dokud návštěvník nedá souhlas (viz loadGA() a cookie lišta dole). -->
 <script>
+  var GA_ID = 'G-TPLR2VH8XC';
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag(){ dataLayer.push(arguments); }
 
-  gtag('config', 'G-TPLR2VH8XC');
+  /* Výchozí stav: vše zamítnuto. Tento řádek neodesílá žádná data, jen nastavuje pravidla. */
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+
+  var gaLoaded = false;
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window['ga-disable-' + GA_ID] = false;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA_ID, { 'anonymize_ip': true, 'allow_google_signals': false, 'allow_ad_personalization_signals': false });
+  }
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -231,6 +250,53 @@
   footer .row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 22px; }
   footer p { margin: 0 0 4px; }
   footer .small { font-size: .8rem; opacity: .75; }
+
+  /* Cookie lišta a nastavení */
+  .cc-link { background: none; border: 0; padding: 0; font: inherit; color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .cc-link:hover { color: var(--text); }
+  .cc-banner {
+    position: fixed; z-index: 100; left: 16px; right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    max-width: 760px; margin-inline: auto;
+    background: rgba(13, 18, 48, .97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(160, 170, 255, .28); border-radius: 22px;
+    padding: 22px 24px; box-shadow: 0 24px 60px -12px rgba(0,0,0,.7);
+  }
+  .cc-banner[hidden], .cc-modal[hidden] { display: none; }
+  .cc-banner h2 { font-family: var(--display); font-size: 1.15rem; margin: 0 0 8px; letter-spacing: -.01em; }
+  .cc-banner p { margin: 0 0 16px; color: var(--muted); font-size: .93rem; line-height: 1.55; }
+  .cc-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  /* Všechna tři tlačítka mají stejný vzhled a váhu */
+  .cc-btn {
+    font: inherit; font-weight: 600; font-size: .92rem; cursor: pointer;
+    padding: 11px 14px; border-radius: 999px; text-align: center;
+    color: var(--text); background: var(--surface-2); border: 1px solid rgba(160, 170, 255, .4);
+    transition: background .2s, border-color .2s;
+  }
+  .cc-btn:hover { background: #1b2458; border-color: rgba(160, 170, 255, .7); }
+  .cc-modal {
+    position: fixed; inset: 0; z-index: 110; display: grid; place-items: center; padding: 16px;
+    background: rgba(3, 5, 18, .72);
+  }
+  .cc-dialog {
+    width: min(560px, 100%); max-height: 90vh; overflow-y: auto;
+    background: var(--surface); border: 1px solid rgba(160, 170, 255, .28); border-radius: 24px; padding: 26px 26px 22px;
+  }
+  .cc-dialog h2 { font-family: var(--display); font-size: 1.35rem; margin: 0 0 8px; }
+  .cc-dialog > p { color: var(--muted); font-size: .93rem; margin: 0 0 18px; }
+  .cc-cat { border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; margin-bottom: 12px; }
+  .cc-cat-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; font-weight: 600; }
+  .cc-cat p { margin: 6px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.5; }
+  .cc-state { font-size: .8rem; font-weight: 500; color: var(--muted); }
+  .cc-switch { position: relative; width: 46px; height: 26px; flex: none; }
+  .cc-switch input { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; z-index: 1; }
+  .cc-switch span { position: absolute; inset: 0; border-radius: 999px; background: #2a3263; transition: background .2s; }
+  .cc-switch span::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform .2s; }
+  .cc-switch input:checked + span { background: var(--violet); }
+  .cc-switch input:checked + span::after { transform: translateX(20px); }
+  .cc-switch input:focus-visible + span { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  .cc-dialog .cc-actions { margin-top: 18px; }
+  @media (max-width: 560px) { .cc-actions { grid-template-columns: 1fr; } }
 
   #backToTop {
     position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom, 0px));
@@ -520,14 +586,22 @@
           <p>Veškerý obsah je poskytován „tak, jak je“, bez záruky. Používání aplikací je zcela dobrovolné a na vlastní odpovědnost uživatele.</p>
         </div>
       </div>
-      <div>
-        <h2><span class="lang-en">Privacy policy</span><span class="lang-cz">Ochrana soukromí</span></h2>
+      <div id="privacy">
+        <h2><span class="lang-en">Privacy & cookies</span><span class="lang-cz">Ochrana soukromí a cookies</span></h2>
         <div class="lang-en">
-          <p>No personal user data is collected. No third-party trackers or intrusive ads in any of the apps.</p>
+          <p>On hazda.cz I use Google Analytics to measure traffic and understand how visitors use the site, so I can keep improving it.</p>
+          <p><strong>What is processed?</strong> Anonymized traffic data such as pages visited, approximate location at country level, and device and browser type. IP addresses are anonymized. I do not use this data for marketing or ad personalization, and it is not linked to you as a person.</p>
+          <p><strong>Consent.</strong> Analytics cookies are stored only with your active consent. You can change or withdraw it at any time via <button type="button" class="cc-link" data-cc-open>Manage cookies</button>. Your language choice is kept in your browser's local storage; it is not sent anywhere.</p>
+          <p><strong>Third-party content.</strong> The page loads fonts from Google Fonts, a visitor counter badge (visitorbadge.io) and a Buy Me a Coffee button, whose providers may technically process your IP address.</p>
+          <p>This notice covers this website only. Each app has its own privacy policy in its store listing.</p>
           <p>Contact: <strong>adam(at)hazda.cz</strong></p>
         </div>
         <div class="lang-cz">
-          <p>Žádné sbírání osobních dat, sledovací skripty ani skryté reklamy v žádné z aplikací.</p>
+          <p>Na webu hazda.cz používám nástroj Google Analytics k měření návštěvnosti a analýze chování návštěvníků, abych mohl web neustále zlepšovat.</p>
+          <p><strong>Jaké údaje zpracovávám?</strong> Anonymizovaná data o návštěvnosti (např. navštívené podstránky, přibližná lokace na úrovni státu, typ zařízení a prohlížeče). IP adresy jsou anonymizovány. Tyto údaje nepoužívám k marketingovým účelům ani k personalizaci reklamy a nejsou propojeny s vaší osobou.</p>
+          <p><strong>Souhlas s cookies.</strong> Analytické cookies se ukládají pouze na základě vašeho aktivního souhlasu, který můžete kdykoliv změnit nebo odvolat kliknutím na <button type="button" class="cc-link" data-cc-open>Správa cookies</button>. Volba jazyka se ukládá do místního úložiště vašeho prohlížeče a nikam se neodesílá.</p>
+          <p><strong>Obsah třetích stran.</strong> Stránka načítá písma z Google Fonts, odznak počítadla návštěv (visitorbadge.io) a tlačítko Buy Me a Coffee. Jejich provozovatelé mohou technicky zpracovat vaši IP adresu.</p>
+          <p>Toto prohlášení se týká pouze tohoto webu. Každá aplikace má vlastní zásady ochrany soukromí v obchodě Google Play.</p>
           <p>Kontakt: <strong>adam(at)hazda.cz</strong></p>
         </div>
       </div>
@@ -555,9 +629,14 @@
       <span class="lang-en">Company ID (IČO): 30083991</span>
       <span class="lang-cz">IČO: 30083991</span>
     </p>
+    <p>
+      <a href="#privacy"><span class="lang-en">Privacy</span><span class="lang-cz">Ochrana soukromí</span></a>
+      &nbsp;·&nbsp;
+      <button type="button" class="cc-link" data-cc-open><span class="lang-en">Manage cookies</span><span class="lang-cz">Správa cookies</span></button>
+    </p>
     <p class="small">
-      <span class="lang-en">Last updated: October 21, 2026</span>
-      <span class="lang-cz">Poslední aktualizace: 21. října 2026</span>
+      <span class="lang-en">Last updated: October 26, 2026</span>
+      <span class="lang-cz">Poslední aktualizace: 26. října 2026</span>
     </p>
   </div>
 </footer>
@@ -565,6 +644,135 @@
 <button id="backToTop" type="button" onclick="scrollToTop()" aria-label="Back to top">
   <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
 </button>
+
+<!-- COOKIE LIŠTA -->
+<div class="cc-banner" id="ccBanner" role="dialog" aria-modal="false" aria-labelledby="ccTitle" hidden>
+  <h2 id="ccTitle"><span class="lang-en">Cookies & privacy</span><span class="lang-cz">Cookies a soukromí</span></h2>
+  <p>
+    <span class="lang-en">I would like to use Google Analytics cookies to measure site traffic anonymously. They are used only if you agree, and nothing is sent to Google before that. <a href="#privacy" class="cc-link">Learn more</a></span>
+    <span class="lang-cz">Rád bych používal analytické cookies Google Analytics k anonymnímu měření návštěvnosti. Použijí se jen s vaším souhlasem a do té doby se Googlu nic neodesílá. <a href="#privacy" class="cc-link">Více informací</a></span>
+  </p>
+  <div class="cc-actions">
+    <button type="button" class="cc-btn" data-cc="reject"><span class="lang-en">Reject all</span><span class="lang-cz">Odmítnout vše</span></button>
+    <button type="button" class="cc-btn" data-cc="settings"><span class="lang-en">Settings</span><span class="lang-cz">Nastavení</span></button>
+    <button type="button" class="cc-btn" data-cc="accept"><span class="lang-en">Accept all</span><span class="lang-cz">Přijmout vše</span></button>
+  </div>
+</div>
+
+<div class="cc-modal" id="ccModal" hidden>
+  <div class="cc-dialog" role="dialog" aria-modal="true" aria-labelledby="ccModalTitle">
+    <h2 id="ccModalTitle"><span class="lang-en">Cookie settings</span><span class="lang-cz">Nastavení cookies</span></h2>
+    <p>
+      <span class="lang-en">Choose which cookies you allow. You can change this at any time via “Manage cookies” in the footer.</span>
+      <span class="lang-cz">Vyberte, která cookies povolíte. Volbu můžete kdykoliv změnit přes „Správa cookies“ v patičce.</span>
+    </p>
+    <div class="cc-cat">
+      <div class="cc-cat-head">
+        <span><span class="lang-en">Necessary</span><span class="lang-cz">Nezbytné</span></span>
+        <span class="cc-state"><span class="lang-en">Always on</span><span class="lang-cz">Vždy zapnuto</span></span>
+      </div>
+      <p>
+        <span class="lang-en">Remembers your language and your cookie choice in your browser. No tracking.</span>
+        <span class="lang-cz">Pamatuje si ve vašem prohlížeči jazyk a vaši volbu cookies. Žádné sledování.</span>
+      </p>
+    </div>
+    <div class="cc-cat">
+      <div class="cc-cat-head">
+        <label for="ccAnalytics"><span class="lang-en">Analytics (Google Analytics)</span><span class="lang-cz">Analytické (Google Analytics)</span></label>
+        <span class="cc-switch"><input type="checkbox" id="ccAnalytics"><span></span></span>
+      </div>
+      <p>
+        <span class="lang-en">Anonymized statistics about visits (pages, country, device type) to help me improve the site. Not used for advertising.</span>
+        <span class="lang-cz">Anonymizované statistiky návštěvnosti (stránky, stát, typ zařízení), které mi pomáhají web zlepšovat. Nepoužívá se pro reklamu.</span>
+      </p>
+    </div>
+    <div class="cc-actions">
+      <button type="button" class="cc-btn" data-cc="reject"><span class="lang-en">Reject all</span><span class="lang-cz">Odmítnout vše</span></button>
+      <button type="button" class="cc-btn" data-cc="save"><span class="lang-en">Save selection</span><span class="lang-cz">Uložit výběr</span></button>
+      <button type="button" class="cc-btn" data-cc="accept"><span class="lang-en">Accept all</span><span class="lang-cz">Přijmout vše</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* Správa souhlasu s cookies */
+  (function () {
+    var KEY = 'cookie_consent_v1';
+    var banner = document.getElementById('ccBanner');
+    var modal = document.getElementById('ccModal');
+    var box = document.getElementById('ccAnalytics');
+    var lastFocus = null;
+
+    function read() {
+      try { var v = JSON.parse(localStorage.getItem(KEY)); return v && typeof v.analytics === 'boolean' ? v : null; }
+      catch (e) { return null; }
+    }
+    function write(analytics) {
+      try { localStorage.setItem(KEY, JSON.stringify({ analytics: analytics, ts: new Date().toISOString() })); } catch (e) {}
+    }
+    function deleteGaCookies() {
+      var host = location.hostname.split('.');
+      var domains = ['', location.hostname];
+      for (var i = 0; i < host.length - 1; i++) domains.push('.' + host.slice(i).join('.'));
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name === '_ga' || name.indexOf('_ga_') === 0 || name === '_gid' || name.indexOf('_gat') === 0) {
+          domains.forEach(function (d) {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
+          });
+        }
+      });
+    }
+    function apply(analytics) {
+      if (analytics) {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        loadGA();
+      } else {
+        window['ga-disable-' + GA_ID] = true;
+        gtag('consent', 'update', { 'analytics_storage': 'denied' });
+        deleteGaCookies();
+      }
+    }
+    function choose(analytics) {
+      write(analytics);
+      apply(analytics);
+      banner.hidden = true;
+      closeModal();
+    }
+    function openModal() {
+      var c = read();
+      box.checked = !!(c && c.analytics);
+      lastFocus = document.activeElement;
+      banner.hidden = true;
+      modal.hidden = false;
+      var first = modal.querySelector('input, button');
+      if (first) first.focus();
+    }
+    function closeModal() {
+      if (modal.hidden) return;
+      modal.hidden = true;
+      if (!read()) banner.hidden = false;
+      else if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-cc], [data-cc-open]');
+      if (!t) return;
+      if (t.hasAttribute('data-cc-open')) { openModal(); return; }
+      var a = t.getAttribute('data-cc');
+      if (a === 'accept') choose(true);
+      else if (a === 'reject') choose(false);
+      else if (a === 'save') choose(box.checked);
+      else if (a === 'settings') openModal();
+    });
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+    var saved = read();
+    if (saved) apply(saved.analytics);
+    else banner.hidden = false;
+  })();
+</script>
 
 <script>
   function setLanguage(lang) {
